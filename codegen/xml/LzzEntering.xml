@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<param>
+  <pair name="project_name" content="order"/>
+  <pair name="class_name" content="LzzEntering"/>
+  <pair name="object_name" content="obj"/>
+  <pair name="table_name" content="lzzcart"/>
+  <pair name="global_variable" content="[]"/>
+  <pair name="global_variablej" content="[j]"/>
+  <pair name="table_showname" content="购物车"/>
+  <list name="field_list">
+    <record>
+      <pair name="class_name" content="LzzAfterSale"/>
+      <pair name="service_name" content="LzzAfterSaleService"/>
+    </record>
+    <record>
+      <pair name="class_name" content="LzzCart"/>
+      <pair name="service_name" content="LzzCartService"/>
+    </record>
+    <record>
+      <pair name="class_name" content="LzzCoupon"/>
+      <pair name="service_name" content="LzzCouponService"/>
+    </record>
+    <record>
+      <pair name="class_name" content="LzzDictionary"/>
+      <pair name="service_name" content="LzzDictionaryService"/>
+    </record>
+    <record>
+      <pair name="class_name" content="LzzFileGroup"/>
+      <pair name="service_name" content="LzzFileService"/>
+    </record>
+    <record>
+      <pair name="class_name" content="LzzFileInfo"/>
+      <pair name="service_name" content="LzzFileService"/>
+    </record>
+    <record>
+      <pair name="class_name" content="LzzGood"/>
+      <pair name="service_name" content="LzzGoodService"/>
+    </record>
+    <record>
+      <pair name="class_name" content="LzzGoodCategory"/>
+      <pair name="service_name" content="LzzGoodService"/>
+    </record>
+    <record>
+      <pair name="class_name" content="LzzGoodEvaluate"/>
+      <pair name="service_name" content="LzzGoodService"/>
+    </record>
+    <record>
+      <pair name="class_name" content="LzzGoodFormat"/>
+      <pair name="service_name" content="LzzGoodService"/>
+    </record>
+    <record>
+      <pair name="class_name" content="LzzGoodTaste"/>
+      <pair name="service_name" content="LzzGoodService"/>
+    </record>
+    <record>
+      <pair name="class_name" content="LzzOrder"/>
+      <pair name="service_name" content="LzzOrderService"/>
+    </record>
+    <record>
+      <pair name="class_name" content="LzzOrderInfo"/>
+      <pair name="service_name" content="LzzOrderService"/>
+    </record>
+    <record>
+      <pair name="class_name" content="LzzOrderSendMode"/>
+      <pair name="service_name" content="LzzOrderService"/>
+    </record>
+    <record>
+      <pair name="class_name" content="LzzUser"/>
+      <pair name="service_name" content="LzzUserService"/>
+    </record>
+    <record>
+      <pair name="class_name" content="LzzUserAddress"/>
+      <pair name="service_name" content="LzzUserService"/>
+    </record>
+    <record>
+      <pair name="class_name" content="LzzUserCoupon"/>
+      <pair name="service_name" content="LzzUserService"/>
+    </record>
+    <record>
+      <pair name="class_name" content="LzzUserTaste"/>
+      <pair name="service_name" content="LzzUserService"/>
+    </record>
+    <record>
+      <pair name="class_name" content="LzzExpressCompany"/>
+      <pair name="service_name" content="LzzExpressCompanyService"/>
+    </record>
+    <record>
+      <pair name="class_name" content="LzzShopEvaluate"/>
+      <pair name="service_name" content="LzzShopService"/>
+    </record>
+    <record>
+      <pair name="class_name" content="LzzCategory"/>
+      <pair name="service_name" content="LzzGoodService"/>
+    </record>
+    <record>
+      <pair name="class_name" content="LzzUserGoodInterested"/>
+      <pair name="service_name" content="LzzUserService"/>
+    </record>
+    <record>
+      <pair name="class_name" content="LzzUserSession"/>
+      <pair name="service_name" content="LzzUserService"/>
+    </record>
+    <record>
+      <pair name="class_name" content="LzzUserGoodViewed"/>
+      <pair name="service_name" content="LzzUserService"/>
+    </record>
+    <record>
+      <pair name="class_name" content="LzzIndexDisplay"/>
+      <pair name="service_name" content="LzzShopService"/>
+    </record>
+  </list>
+</param>

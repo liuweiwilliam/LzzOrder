@@ -1,0 +1,41 @@
+{
+	"error": {
+		"isError": false,
+		"content": "there is something wrong!"
+	},
+	"result": [
+		{ 
+			"name":"首页",
+			"url": "./index.html",
+			"items": [
+			]
+		},
+		{ 
+			"name":"商品管理",
+			"url": "",
+			"items": [
+				{ "name":"商品上架", "url":"./goods/addNewGoods.html"}
+			]
+		},
+		{ 
+			"name":"订单管理",
+			"url": "",
+			"items": [
+				{ "name":"待发货订单", "url":"./orders/orderToExpress.html"},
+				{ "name":"全部订单", "url":"./orders/totalOrderList.html"}
+			]
+		},
+		{ 
+			"name":"数据管理",
+			"url": "./entering/index-entering.html",
+			"items": [
+			]
+		},
+		{ 
+			"name":"关于我们",
+			"url": "./entering/index-entering.html",
+			"items": [
+			]
+		}		
+	]
+}

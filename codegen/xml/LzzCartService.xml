@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<param>
+  <pair name="project_name" content="order"/>
+  <pair name="service_name" content="LzzCartService"/>
+  <pair name="dao_imp_class" content="XtlDaoImp"/>
+  <pair name="service_pack" content="service"/>
+  <pair name="dao_name" content="LzzDao"/>
+  <pair name="cache_name" content="LzzCartCacheMgr"/>
+  <list name="service_list">
+    <record>
+      <pair name="class_name" content="LzzCart"/>
+    </record>
+  </list>
+  <list name="one_par_list">
+    <record>
+      <pair name="class_name" content="LzzCart"/>
+      <pair name="attr_name1" content="userId"/>
+      <pair name="attr_uname1" content="UserId"/>
+      <pair name="attr_type1" content="String"/>
+    </record>
+  </list>
+  <list name="four_par_single">
+    <record>
+      <pair name="class_name" content="LzzCart"/>
+      <pair name="attr_name1" content="userId"/>
+      <pair name="attr_uname1" content="UserId"/>
+      <pair name="attr_type1" content="String"/>
+      <pair name="attr_name2" content="goodId"/>
+      <pair name="attr_uname2" content="GoodId"/>
+      <pair name="attr_type2" content="String"/>
+      <pair name="attr_name3" content="formatId"/>
+      <pair name="attr_uname3" content="FormatId"/>
+      <pair name="attr_type3" content="String"/>
+      <pair name="attr_name4" content="tasteId"/>
+      <pair name="attr_uname4" content="TasteId"/>
+      <pair name="attr_type4" content="String"/>
+    </record>
+  </list>
+</param>

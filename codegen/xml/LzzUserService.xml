@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<param>
+  <pair name="project_name" content="order"/>
+  <pair name="service_name" content="LzzUserService"/>
+  <pair name="dao_imp_class" content="XtlDaoImp"/>
+  <pair name="service_pack" content="service"/>
+  <pair name="dao_name" content="LzzDao"/>
+  <pair name="cache_name" content="LzzUserCacheMgr"/>
+  <list name="service_list">
+    <record>
+      <pair name="class_name" content="LzzUser"/>
+    </record>
+    <record>
+      <pair name="class_name" content="LzzUserTaste"/>
+    </record>
+    <record>
+      <pair name="class_name" content="LzzUserAddress"/>
+    </record>
+    <record>
+      <pair name="class_name" content="LzzUserCoupon"/>
+    </record>
+    <record>
+      <pair name="class_name" content="LzzUserGoodInterested"/>
+    </record>
+    <record>
+      <pair name="class_name" content="LzzUserSession"/>
+    </record>
+    <record>
+      <pair name="class_name" content="LzzUserGoodViewed"/>
+    </record>
+  </list>
+  <list name="one_par_list">
+    <record>
+      <pair name="class_name" content="LzzUserTaste"/>
+      <pair name="attr_name1" content="userId"/>
+      <pair name="attr_uname1" content="UserId"/>
+      <pair name="attr_type1" content="String"/>
+    </record>
+    <record>
+      <pair name="class_name" content="LzzUserAddress"/>
+      <pair name="attr_name1" content="userId"/>
+      <pair name="attr_uname1" content="UserId"/>
+      <pair name="attr_type1" content="String"/>
+    </record>
+    <record>
+      <pair name="class_name" content="LzzUserCoupon"/>
+      <pair name="attr_name1" content="userId"/>
+      <pair name="attr_uname1" content="UserId"/>
+      <pair name="attr_type1" content="String"/>
+    </record>
+    <record>
+      <pair name="class_name" content="LzzUserGoodInterested"/>
+      <pair name="attr_name1" content="userId"/>
+      <pair name="attr_uname1" content="UserId"/>
+      <pair name="attr_type1" content="String"/>
+    </record>
+    <record>
+      <pair name="class_name" content="LzzUserGoodInterested"/>
+      <pair name="attr_name1" content="goodId"/>
+      <pair name="attr_uname1" content="GoodId"/>
+      <pair name="attr_type1" content="String"/>
+    </record>
+    <record>
+      <pair name="class_name" content="LzzUserGoodViewed"/>
+      <pair name="attr_name1" content="userId"/>
+      <pair name="attr_uname1" content="UserId"/>
+      <pair name="attr_type1" content="String"/>
+    </record>
+  </list>
+  <list name="two_par_single">
+    <record>
+      <pair name="class_name" content="LzzUserGoodInterested"/>
+      <pair name="attr_name1" content="userId"/>
+      <pair name="attr_uname1" content="UserId"/>
+      <pair name="attr_type1" content="String"/>
+      <pair name="attr_name2" content="goodId"/>
+      <pair name="attr_uname2" content="GoodId"/>
+      <pair name="attr_type2" content="String"/>
+    </record>
+    <record>
+      <pair name="class_name" content="LzzUserAddress"/>
+      <pair name="attr_name1" content="userId"/>
+      <pair name="attr_uname1" content="UserId"/>
+      <pair name="attr_type1" content="String"/>
+      <pair name="attr_name2" content="usualFlag"/>
+      <pair name="attr_uname2" content="UsualFlag"/>
+      <pair name="attr_type2" content="String"/>
+    </record>
+    <record>
+      <pair name="class_name" content="LzzUserGoodViewed"/>
+      <pair name="attr_name1" content="userId"/>
+      <pair name="attr_uname1" content="UserId"/>
+      <pair name="attr_type1" content="String"/>
+      <pair name="attr_name2" content="goodId"/>
+      <pair name="attr_uname2" content="GoodId"/>
+      <pair name="attr_type2" content="String"/>
+    </record>
+  </list>
+  <list name="one_par_single">
+    <record>
+      <pair name="class_name" content="LzzUserSession"/>
+      <pair name="attr_name1" content="sessionId"/>
+      <pair name="attr_uname1" content="SessionId"/>
+      <pair name="attr_type1" content="String"/>
+    </record>
+    <record>
+      <pair name="class_name" content="LzzUserSession"/>
+      <pair name="attr_name1" content="userId"/>
+      <pair name="attr_uname1" content="UserId"/>
+      <pair name="attr_type1" content="String"/>
+    </record>
+    <record>
+      <pair name="class_name" content="LzzUser"/>
+      <pair name="attr_name1" content="openId"/>
+      <pair name="attr_uname1" content="OpenId"/>
+      <pair name="attr_type1" content="String"/>
+    </record>
+    <record>
+      <pair name="class_name" content="LzzUser"/>
+      <pair name="attr_name1" content="unionId"/>
+      <pair name="attr_uname1" content="UnionId"/>
+      <pair name="attr_type1" content="String"/>
+    </record>
+    <record>
+      <pair name="class_name" content="LzzUser"/>
+      <pair name="attr_name1" content="phone"/>
+      <pair name="attr_uname1" content="Phone"/>
+      <pair name="attr_type1" content="String"/>
+    </record>
+  </list>
+</param>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<param>
+  <pair name="project_name" content="order"/>
+  <pair name="cache_mgr_name" content="LzzGoodCacheMgr"/>
+  <pair name="cache_mgr_pack" content="cachemgr"/>
+  <list name="pojo_list">
+    <record>
+      <pair name="class_name" content="LzzGood"/>
+    </record>
+    <record>
+      <pair name="class_name" content="LzzGoodTaste"/>
+    </record>
+    <record>
+      <pair name="class_name" content="LzzGoodCategory"/>
+    </record>
+    <record>
+      <pair name="class_name" content="LzzGoodFormat"/>
+    </record>
+    <record>
+      <pair name="class_name" content="LzzGoodEvaluate"/>
+    </record>
+    <record>
+      <pair name="class_name" content="LzzCategory"/>
+    </record>
+  </list>
+</param>

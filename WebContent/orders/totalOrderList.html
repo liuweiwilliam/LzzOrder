@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="keywords" content="天地通应急广播"/>
+    <title>待发货</title>
+		
+	<link href="../css/bootstrap.min.css" rel="stylesheet">
+	<link href="../css/basic.css" rel="stylesheet">
+		
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/velocity.min.js"></script>
+    <script type="text/javascript" src="../js/velocity.ui.min.js"></script>
+	<style type="text/css">
+		.flow-div:after{
+			display:block;
+			clear:both;
+			content:"";
+			visibility:hidden;
+			height:0;
+		}
+		
+		.left-part{
+			float: left;
+		}
+		
+		.right-part{
+			float: right;
+		}
+		
+		.selected{
+			background: #95CACA;
+			filter：alpha(opacity=80);
+		}
+		
+		table tbody tr:nth-child(odd){
+			background-color: #f5f5f5;
+		}
+		
+		table tbody tr:nth-child(even){
+			background-color: #dff0d8;
+		}
+		
+		table thead tr th{
+			min-width:8rem;
+		}
+		
+		.filter{
+			width: 100%;
+		}
+		
+		.goodInfo{
+			width: 100%;
+		}
+		
+		.goodItem{
+			width: 20%;
+			display: flex !important;
+			flex-direction: row;
+			justify-content: center;
+			align-items: center;
+		}
+		
+		.orderBtnDiv{
+			width: 50%;
+		}
+		
+		.orderOpr{
+			width: 90%;
+			margin-top: 10px;
+		}
+	</style>
+    <script>
+    </script>
+</head>
+<body onLoad="">
+	<div class="page-head">
+		<span>订单管理</span>
+	</div>
+	<div class="filter flex-col">
+		<div class="flex-row flex-item from-start filterPar flex-wrap">
+			<div style="width:33%;">
+				<label for="orderNum">订单号：</label>
+				<input id="orderNum">
+			</div>
+			<div style="width:33%;">
+				<label for="phone">联系电话：</label>
+				<input id="phone">
+			</div>
+			<div style="width:33%;">
+				<label for="person">联系人：</label>
+				<input id="person">
+			</div>
+		</div>
+		<div class="filter-btn flex-row-start flex-item margin-top-s">
+			<button type="button" class="btn btn-success" onclick="filterList()">筛选</button>
+		</div>
+	</div>
+	<div class="flex-col margin-top-s" style="width:100%;">
+		<div class="flex-item">
+			订单列表：
+		</div>
+		<div class="flex-item">
+			<div class="panel-group" id="accordion">
+				<div class="panel panel-success">
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a class="orderNum" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+								123
+							</a>
+						</h4>
+					</div>
+					<div id="collapseTwo" class="panel-collapse collapse">
+						<div class="panel-body">
+							<div class="orderInfo flex-col">
+								<div class="goodInfo flex-row from-start margin-top-s">
+									<div class="typicalImg goodItem">
+										<img src="" style="width:100%;"></img>
+									</div>
+									<div class="goodName goodItem">
+										
+									</div>
+									<div class="tasteName goodItem">
+										
+									</div>
+									<div class="formatName goodItem">
+										
+									</div>
+									<div class="count goodItem">
+										
+									</div>
+								</div>
+								
+								<div class="orderOpr orderOprToPay flex-row hide">
+									<div class="orderBtnDiv flex-col">
+										<input type="button" value="tijiao">
+									</div>
+									<div class="orderBtnDiv flex-col">
+										<input type="button" value="tijiao">
+									</div>
+								</div>
+								<div class="orderOpr orderOprToExpress flex-row">
+									<div class="orderBtnDiv flex-col">
+										<input type="button" value="tijiao">
+									</div>
+									<div class="orderBtnDiv flex-col">
+										<input type="button" value="tijiao">
+									</div>
+								</div>
+								<div class="orderOpr orderOprToReceive flex-row">
+									<div class="orderBtnDiv flex-col">
+										<input type="button" value="tijiao">
+									</div>
+									<div class="orderBtnDiv flex-col">
+										<input type="button" value="tijiao">
+									</div>
+								</div>
+								<div class="orderOpr orderOprToEvaluate flex-row">
+									<div class="orderBtnDiv flex-col">
+										<input type="button" value="tijiao">
+									</div>
+									<div class="orderBtnDiv flex-col">
+										<input type="button" value="tijiao">
+									</div>
+								</div>
+								<div class="orderOpr orderOprFinished flex-row">
+									<div class="orderBtnDiv flex-col">
+										<input type="button" value="tijiao">
+									</div>
+									<div class="orderBtnDiv flex-col">
+										<input type="button" value="tijiao">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+<script type="text/javascript" src="../js/bootbox.js"></script>
+<script type="text/javascript">
+	
+	var status= "全部";
+	var actionName = "getOrdersByStatus.action";
+	var actionUrl = actionName + "?" + "status=" + status;
+	var orderListBodySel = $("#accordion");
+	var orderListItemSel = $("#accordion .panel-success");
+	function listInit(data){
+    	if(data.totalSize!=cur_num){
+    		var clone = $(orderListItemSel).eq(0).clone();
+    		$(orderListBodySel).empty();
+    		for(var i=0; i<data.orderList.length; i++){
+    			//clone控件
+    			//控件置值
+    			//append进页面
+    			var sin_order = data.orderList[i];
+				$(clone).find(".orderNum").text(sin_order.orderNum);
+				$(orderListBodySel).append(clone.clone());
+			}
+			
+			$("#page").text(pager.curPage + "/" + pager.maxPage)
+    	}
+		cur_num = data.totalSize;
+	}
+	function refreshFilterPar(){
+		//有全局变量filterPar JSONArray结构
+		filterPar = {};
+		filterPar.orderNum = $("#orderNum").val();
+		filterPar.phone = $("#phone").val();
+		filterPar.person = $("#person").val();
+	}
+	
+	var logList;
+	var pager = {
+		"pageSize" : 20,
+		"curPage" : 1,
+		"maxPage" : 1
+	}
+	$("document").ready(function(){
+		//初始化页面数据
+		initData();
+	});
+	
+	var cur_num = 0;
+	function initData(){
+		//初始化消息列表
+		getLogList();
+		setInterval("getLogList()", 10000)
+	}
+	
+	function getLogList(){
+		$.ajax({
+	        type: "GET",
+	        url: actionUrl + 
+	        	"&pageSize=" + pager.pageSize + 
+	        	"&curPage=" + pager.curPage + 
+	        	"&filterPar=" + encodeURIComponent(JSON.stringify(filterPar)),
+	        dataType: "json",
+	        beforeSend: function() {
+	        },
+	        success: function(data) {
+	        	pager.maxPage = data.maxPage;
+	        	listInit(data);
+	        },
+	        error: function(XHR) {
+	        }
+	    });
+	}
+	
+	function prevPage(){
+		if(pager.curPage==1){
+			return;
+		}
+		pager.curPage--;
+		getLogList();
+	}
+	
+	function nextPage(){
+		if(pager.curPage==pager.maxPage){
+			return;
+		}
+		pager.curPage++;
+		getLogList();
+	}
+	
+	var filterPar = [];
+	function filterList(){
+		refreshFilterPar();
+		getLogList();
+	}
+</script>
+</html> 
+ 

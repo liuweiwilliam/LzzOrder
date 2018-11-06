@@ -1,0 +1,10 @@
+文件名,xml/LzzExpressCompanyService.xml,
+全局变量,project_name,order
+全局变量,service_name,LzzExpressCompanyService
+全局变量,dao_imp_class,XtlDaoImp
+全局变量,service_pack,service
+全局变量,dao_name,LzzDao
+全局变量,cache_name,LzzExpressCompanyCacheMgr
+表,service_list,
+,class_name,
+,LzzExpressCompany,

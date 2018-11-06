@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<param>
+  <pair name="project_name" content="order"/>
+  <pair name="service_name" content="LzzOrderService"/>
+  <pair name="dao_imp_class" content="XtlDaoImp"/>
+  <pair name="service_pack" content="service"/>
+  <pair name="dao_name" content="LzzDao"/>
+  <pair name="cache_name" content="LzzOrderCacheMgr"/>
+  <list name="service_list">
+    <record>
+      <pair name="class_name" content="LzzOrder"/>
+    </record>
+    <record>
+      <pair name="class_name" content="LzzOrderInfo"/>
+    </record>
+    <record>
+      <pair name="class_name" content="LzzOrderSendMode"/>
+    </record>
+  </list>
+  <list name="one_par_list">
+    <record>
+      <pair name="class_name" content="LzzOrder"/>
+      <pair name="attr_name1" content="userId"/>
+      <pair name="attr_uname1" content="UserId"/>
+      <pair name="attr_type1" content="String"/>
+    </record>
+    <record>
+      <pair name="class_name" content="LzzOrderInfo"/>
+      <pair name="attr_name1" content="orderId"/>
+      <pair name="attr_uname1" content="OrderId"/>
+      <pair name="attr_type1" content="String"/>
+    </record>
+    <record>
+      <pair name="class_name" content="LzzOrder"/>
+      <pair name="attr_name1" content="status"/>
+      <pair name="attr_uname1" content="Status"/>
+      <pair name="attr_type1" content="String"/>
+    </record>
+  </list>
+  <list name="two_par_list">
+    <record>
+      <pair name="class_name" content="LzzOrder"/>
+      <pair name="attr_name1" content="userId"/>
+      <pair name="attr_uname1" content="UserId"/>
+      <pair name="attr_type1" content="String"/>
+      <pair name="attr_name2" content="status"/>
+      <pair name="attr_uname2" content="Status"/>
+      <pair name="attr_type2" content="String"/>
+    </record>
+  </list>
+</param>

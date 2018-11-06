@@ -1,0 +1,7 @@
+文件名,xml/LzzCartCacheMgr.xml,
+全局变量,project_name,order
+全局变量,cache_mgr_name,LzzCartCacheMgr
+全局变量,cache_mgr_pack,cachemgr
+表,pojo_list,pojo列表
+,class_name,
+,LzzCart,

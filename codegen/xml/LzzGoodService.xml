@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<param>
+  <pair name="project_name" content="order"/>
+  <pair name="service_name" content="LzzGoodService"/>
+  <pair name="dao_imp_class" content="XtlDaoImp"/>
+  <pair name="service_pack" content="service"/>
+  <pair name="dao_name" content="LzzDao"/>
+  <pair name="cache_name" content="LzzGoodCacheMgr"/>
+  <list name="service_list">
+    <record>
+      <pair name="class_name" content="LzzGood"/>
+    </record>
+    <record>
+      <pair name="class_name" content="LzzGoodTaste"/>
+    </record>
+    <record>
+      <pair name="class_name" content="LzzGoodEvaluate"/>
+    </record>
+    <record>
+      <pair name="class_name" content="LzzGoodCategory"/>
+    </record>
+    <record>
+      <pair name="class_name" content="LzzGoodFormat"/>
+    </record>
+    <record>
+      <pair name="class_name" content="LzzCategory"/>
+    </record>
+  </list>
+  <list name="one_par_list">
+    <record>
+      <pair name="class_name" content="LzzGoodTaste"/>
+      <pair name="attr_name1" content="goodId"/>
+      <pair name="attr_uname1" content="GoodId"/>
+      <pair name="attr_type1" content="String"/>
+    </record>
+    <record>
+      <pair name="class_name" content="LzzGoodTaste"/>
+      <pair name="attr_name1" content="tasteName"/>
+      <pair name="attr_uname1" content="TasteName"/>
+      <pair name="attr_type1" content="String"/>
+    </record>
+    <record>
+      <pair name="class_name" content="LzzGoodCategory"/>
+      <pair name="attr_name1" content="goodId"/>
+      <pair name="attr_uname1" content="GoodId"/>
+      <pair name="attr_type1" content="String"/>
+    </record>
+    <record>
+      <pair name="class_name" content="LzzGoodCategory"/>
+      <pair name="attr_name1" content="categoryId"/>
+      <pair name="attr_uname1" content="CategoryId"/>
+      <pair name="attr_type1" content="String"/>
+    </record>
+    <record>
+      <pair name="class_name" content="LzzGoodFormat"/>
+      <pair name="attr_name1" content="goodId"/>
+      <pair name="attr_uname1" content="GoodId"/>
+      <pair name="attr_type1" content="String"/>
+    </record>
+    <record>
+      <pair name="class_name" content="LzzGoodEvaluate"/>
+      <pair name="attr_name1" content="goodId"/>
+      <pair name="attr_uname1" content="GoodId"/>
+      <pair name="attr_type1" content="String"/>
+    </record>
+    <record>
+      <pair name="class_name" content="LzzCategory"/>
+      <pair name="attr_name1" content="isHot"/>
+      <pair name="attr_uname1" content="IsHot"/>
+      <pair name="attr_type1" content="String"/>
+    </record>
+    <record>
+      <pair name="class_name" content="LzzGood"/>
+      <pair name="attr_name1" content="isHot"/>
+      <pair name="attr_uname1" content="IsHot"/>
+      <pair name="attr_type1" content="String"/>
+    </record>
+    <record>
+      <pair name="class_name" content="LzzGood"/>
+      <pair name="attr_name1" content="isNew"/>
+      <pair name="attr_uname1" content="IsNew"/>
+      <pair name="attr_type1" content="String"/>
+    </record>
+  </list>
+</param>

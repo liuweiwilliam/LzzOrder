@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<param>
+  <pair name="project_name" content="order"/>
+  <pair name="service_name" content="LzzShopService"/>
+  <pair name="dao_imp_class" content="XtlDaoImp"/>
+  <pair name="service_pack" content="service"/>
+  <pair name="dao_name" content="LzzDao"/>
+  <pair name="cache_name" content="LzzShopCacheMgr"/>
+  <list name="service_list">
+    <record>
+      <pair name="class_name" content="LzzShopEvaluate"/>
+    </record>
+    <record>
+      <pair name="class_name" content="LzzIndexDisplay"/>
+    </record>
+  </list>
+  <list name="one_par_list">
+    <record>
+      <pair name="class_name" content="LzzShopEvaluate"/>
+      <pair name="attr_name1" content="orderId"/>
+      <pair name="attr_uname1" content="OrderId"/>
+      <pair name="attr_type1" content="String"/>
+    </record>
+    <record>
+      <pair name="class_name" content="LzzShopEvaluate"/>
+      <pair name="attr_name1" content="evaluateLevel"/>
+      <pair name="attr_uname1" content="EvaluateLevel"/>
+      <pair name="attr_type1" content="String"/>
+    </record>
+    <record>
+      <pair name="class_name" content="LzzIndexDisplay"/>
+      <pair name="attr_name1" content="type"/>
+      <pair name="attr_uname1" content="Type"/>
+      <pair name="attr_type1" content="String"/>
+    </record>
+  </list>
+</param>

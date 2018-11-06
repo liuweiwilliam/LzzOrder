@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="keywords" content="天地通应急广播"/>
+    <title>待发货</title>
+		
+	<link href="../css/bootstrap.min.css" rel="stylesheet">
+	<link href="../css/basic.css" rel="stylesheet">
+		
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/velocity.min.js"></script>
+    <script type="text/javascript" src="../js/velocity.ui.min.js"></script>
+	<style type="text/css">
+		.flow-div:after{
+			display:block;
+			clear:both;
+			content:"";
+			visibility:hidden;
+			height:0;
+		}
+		
+		.left-part{
+			float: left;
+		}
+		
+		.right-part{
+			float: right;
+		}
+		
+		.selected{
+			background: #95CACA;
+			filter：alpha(opacity=80);
+		}
+		
+		table tbody tr:nth-child(odd){
+			background-color: #f5f5f5;
+		}
+		
+		table tbody tr:nth-child(even){
+			background-color: #dff0d8;
+		}
+		
+		table thead tr th{
+			min-width:8rem;
+		}
+	</style>
+    <script>
+    </script>
+</head>
+<body onLoad="">
+	<table class="table" id="logTable">
+		<caption>消息日志</caption>
+		<thead>
+			<tr>
+				<th>订单号</th>
+				<th>时间</th>
+				<th>联系人</th>
+				<th>联系电话</th>
+				<th>操作</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+			</tr>
+		</tbody>
+	</table>
+	
+	<ul class="pager">
+	    <li class=""><a href="#" onclick="prevPage()">&larr; 上一页</a></li>
+	    <span id="page" style="margin-left:10px;margin-right:10px;"></span>
+	    <li class=""><a href="#" onclick="nextPage()">下一页 &rarr;</a></li>
+	</ul>
+	
+	<audio id="music2" src="../media/new-order.mp3"></audio> 
+	
+	<div id="orderInfo" style="overflow-y:auto;margin:0 auto;" class="modal" data-easein="flipXIn" tabindex="-1">
+      <div class="modal-dialog" style="width:100%;">
+        <div class="modal-content">
+          <div class="modal-header" style="">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h5 class="modal-title">订单发货</h5>
+          </div>
+          <div class="modal-body" style="width:80%;height:80%;margin:0 auto">
+			<div class="flex-col">
+				<!-- 区域选择区域 -->
+				<div class="flex-col align-start details" style="width:100%;">
+					<label for="">订单详情：</label>
+				</div>
+			</div>
+          </div>
+        </div>
+      </div>
+    </div>
+</body>
+
+<script type="text/javascript" src="../js/bootbox.js"></script>
+<script type="text/javascript">
+	var logList;
+	var pager = {
+		"pageSize" : 20,
+		"curPage" : 1,
+		"maxPage" : 1
+	}
+	$("document").ready(function(){
+		//初始化页面数据
+		initData();
+	});
+	
+	var cur_num = 0;
+	function initData(){
+		//初始化消息列表
+		setLogList();
+		setInterval("setLogList()", 10000)
+	}
+	
+	function setLogList(){
+		$.ajax({
+	        type: "GET",
+	        url: "getOrderToExpress.action?pageSize=" + pager.pageSize + "&curPage=" + pager.curPage,
+	        dataType: "json",
+	        beforeSend: function() {
+	        },
+	        success: function(data) {
+	        	pager.maxPage = data.maxPage;
+	        	console.log(data.totalSize+","+cur_num);
+	        	if(data.totalSize>cur_num){
+	        		voice();
+	        	}
+	        	if(data.totalSize!=cur_num){
+	        		$("#logTable>tbody").empty();
+	        		for(var i=0; i<data.orderList.length; i++){
+						var obj = data.orderList[i];
+						var tr = "<tr>";
+						
+						tr += "<td>" + obj.orderNum + "</td>";
+						tr += "<td>" + obj.createTime + "</td>";
+						tr += "<td>" + obj.userName + "</td>";
+						tr += "<td>" + obj.phone + "</td>";
+						tr += "<td><a onclick='getDetail(\""+obj.id+"\")'>发货</a></td>";
+						
+						tr += "</tr>";
+						
+						$("#logTable>tbody").append(tr);
+					}
+					
+					$("#page").text(pager.curPage + "/" + pager.maxPage)
+	        	}
+        		cur_num = data.totalSize;
+	        },
+	        error: function(XHR) {
+	        }
+	    });
+	}
+	
+	function prevPage(){
+		if(pager.curPage==1){
+			return;
+		}
+		
+		pager.curPage--;
+		
+		setLogList();
+	}
+	
+	function nextPage(){
+		if(pager.curPage==pager.maxPage){
+			return;
+		}
+		
+		pager.curPage++;
+		setLogList();
+	}
+	
+	function getDetail(orderId){
+		$.ajax({
+	        type: "GET",
+	        url: "getSingleOrder.action?orderId=" + orderId,
+	        dataType: "json",
+	        beforeSend: function() {
+	        },
+	        success: function(data) {
+	        	$(".details").empty();
+				for(var i=0; i<data.orderInfo.length; i++){
+					var obj = data.orderInfo[i];
+					var html = "";
+					html += "<div class='flex-row'>"
+					html += "<span>" + (i+1) + "、</span>";
+					html += "<span>" + obj.name + "&emsp;</span>";
+					html += "<span>" + obj.format + "&emsp;</span>";
+					html += "<span>" + obj.taste + "&emsp;</span>";
+					html += "<span>数量：" + obj.count + "&emsp;</span>";
+					html += "</div>"
+					$(".details").append(html);
+				}
+				
+				var expressCmp = "<label for='expressCmp' class='margin-top-s'>请选择快递单号</label>"
+				expressCmp += "<select id='expressCmp' style='width:50%;'>";
+				
+				for(var ii=0; ii<data.expressList.ids.length; ii++){
+					expressCmp += "<option value='"+data.expressList.ids[ii]+"'>"+data.expressList.names[ii]+"</option>";
+				}
+				
+				expressCmp += "</select>";
+				$(".details").append(expressCmp);
+				$("#expressCmp").val(data.expressId);
+				console.log(data.expressId+ "," + $("#expressCmp").val())
+				
+				var expressNum = "<label for='expressNum' class='margin-top-s'>填写快递单号</label>";
+				expressNum += "<input placeholder='快递单号' id='expressNum' style='width:50%;'>";
+				$(".details").append(expressNum);
+				
+				var btn = "<button class='btn btn-success' style='width:30%;margin:1rem auto;' onclick='express(\""+orderId+"\")'>发货</button>"
+				$(".details").append(btn);
+				
+				$("#orderInfo").modal("show");
+	        },
+	        error: function(XHR) {
+	        }
+	    });
+		
+	}
+	
+	function express(orderId){
+		var data = {};
+		/* if($("#expressNum").val()==""){
+			alert("请填写快递单号");
+			return;
+		} */
+		data.expressCmp = $("#expressCmp").val();
+		data.expressNum = $("#expressNum").val();
+		console.log(data);
+		$.ajax({
+	        type: "GET",
+	        url: "express.action?orderId=" + orderId + "&expressCmp=" + $("#expressCmp").val() + "&expressNum=" + $("#expressNum").val(),
+	        dataType: "json",
+	        beforeSend: function() {
+	        },
+	        success: function(data) {
+	        	showToast("发货成功", 1500);
+	        	$("#orderInfo").modal("hide");
+	        	setLogList();
+	        },
+	        error: function(XHR) {
+	        }
+	    });
+	}
+	
+	function voice(){
+		var music = document.getElementById('music2');
+		music.load();
+		music.play();
+	}
+</script>
+</html> 
+ 

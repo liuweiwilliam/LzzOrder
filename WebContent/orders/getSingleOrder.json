@@ -1,0 +1,26 @@
+{
+	"error":{
+		"isError":false,
+		"content":""
+	},
+	"orderInfo":[
+		{
+			"id":"001",
+			"name":"商品名",
+			"format":"规格",
+			"taste":"口味",
+			"count":"10"
+		},
+		{
+			"id":"001",
+			"name":"商品名",
+			"format":"规格",
+			"taste":"口味",
+			"count":"10"
+		}
+	],
+	"expressList":{
+		"ids":["001","002","003"],
+		"names":["快递1", "kuaidi2", "kuaidi3"]
+	}
+}

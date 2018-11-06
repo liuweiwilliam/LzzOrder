@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<param>
+  <pair name="project_name" content="order"/>
+  <pair name="cache_mgr_name" content="LzzDictionaryCacheMgr"/>
+  <pair name="cache_mgr_pack" content="cachemgr"/>
+  <list name="pojo_list">
+    <record>
+      <pair name="class_name" content="LzzDictionary"/>
+    </record>
+  </list>
+</param>

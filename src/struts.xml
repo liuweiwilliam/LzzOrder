@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+    
+<struts>
+
+	<constant name= "struts.multipart.maxSize" value="11747904000"/>
+
+	<package name="order" extends="struts-default">
+		<!-- 文件上传下载action -->
+		<action name="upload" class="com.lzz.order.action.media.LzzFileUploadAction" method="upload">
+        </action>
+        <action name="download" class="com.lzz.order.action.media.LzzFileUploadAction" method="download">
+            <result name="success" type="stream">
+                <param name="contentDisposition">attachment;filename="${fileName}"</param>
+                <param name="inputName">downloadFile</param>
+                <param name="contentType">application/octet-stream</param>
+            </result>
+        </action>
+        
+		<action name="login" class="com.lzz.order.action.LzzLogin" method="login"></action>
+		<action name="loginForLzzManager" class="com.lzz.order.action.LzzLogin" method="loginForLzzManager"></action>
+		
+		<action name="getLzzCategories" class="com.lzz.order.action.goods.LzzGoodsAction" method="getLzzCategories"></action>
+		<action name="addLzzCategories" class="com.lzz.order.action.goods.LzzGoodsAction" method="addOrUpdateLzzCategories"></action>
+		<action name="getGoodsByCategory" class="com.lzz.order.action.goods.LzzGoodsAction" method="getGoodsByCategory"></action>
+		<action name="getGoodInfo" class="com.lzz.order.action.goods.LzzGoodsAction" method="getGoodInfo"></action>
+		<action name="setGoodInterested" class="com.lzz.order.action.goods.LzzGoodsAction" method="setGoodInterested"></action>
+		<action name="getGoodEvaluates" class="com.lzz.order.action.goods.LzzGoodsAction" method="getGoodEvaluates"></action>
+		<action name="submitEvaluate" class="com.lzz.order.action.goods.LzzGoodsAction" method="submitEvaluate"></action>
+		<action name="getOrderInfoToEvaluate" class="com.lzz.order.action.goods.LzzGoodsAction" method="getOrderInfoToEvaluate"></action>
+		<action name="searchGoodByName" class="com.lzz.order.action.goods.LzzGoodsAction" method="searchGoodByName"></action>
+		<action name="searchGoodByQRCode" class="com.lzz.order.action.goods.LzzGoodsAction" method="searchGoodByQRCode"></action>
+		<action name="getIndexInitInfo" class="com.lzz.order.action.goods.LzzGoodsAction" method="getIndexInitInfo"></action>
+        <action name="getNewGoods" class="com.lzz.order.action.goods.LzzGoodsAction" method="getNewGoods"></action>
+		<action name="getHotGoods" class="com.lzz.order.action.goods.LzzGoodsAction" method="getHotGoods"></action>
+		<action name="getAllGoods" class="com.lzz.order.action.goods.LzzGoodsAction" method="getAllGoods"></action>
+		<action name="createNewGood" class="com.lzz.order.action.goods.LzzGoodsAction" method="createNewGood"></action>
+        
+		<action name="addGoodToCart" class="com.lzz.order.action.cart.LzzCartAction" method="addGoodToCart"></action>
+		<action name="getCartInfo" class="com.lzz.order.action.cart.LzzCartAction" method="getCartInfo"></action>
+		<action name="setItemSelected" class="com.lzz.order.action.cart.LzzCartAction" method="setItemSelected"></action>
+		<action name="checkAllCartItem" class="com.lzz.order.action.cart.LzzCartAction" method="checkAllCartItem"></action>
+		<action name="addCartItemCount" class="com.lzz.order.action.cart.LzzCartAction" method="addCartItemCount"></action>
+		<action name="descCartItemCount" class="com.lzz.order.action.cart.LzzCartAction" method="descCartItemCount"></action>
+		<action name="setCartItemCount" class="com.lzz.order.action.cart.LzzCartAction" method="setCartItemCount"></action>
+	
+		<action name="submitOrderFromCart" class="com.lzz.order.action.order.LzzOrderAction" method="submitOrderFromCart"></action>
+		<action name="submitOrderFromSingleGood" class="com.lzz.order.action.order.LzzOrderAction" method="submitOrderFromSingleGood"></action>
+		<action name="getOrderInfo" class="com.lzz.order.action.order.LzzOrderAction" method="getOrderInfo"></action>
+		<action name="submitOrder" class="com.lzz.order.action.order.LzzOrderAction" method="submitOrder"></action>
+		<action name="getOrders" class="com.lzz.order.action.order.LzzOrderAction" method="getOrders"></action>
+		<action name="getSingleOrder" class="com.lzz.order.action.order.LzzOrderAction" method="getSingleOrder"></action>
+		<action name="express" class="com.lzz.order.action.order.LzzOrderAction" method="express"></action>
+		<action name="confiemReceived" class="com.lzz.order.action.order.LzzOrderAction" method="confiemReceived"></action>
+		<action name="getOrderToExpress" class="com.lzz.order.action.order.LzzOrderAction" method="getOrderToExpress"></action>
+		<action name="getOrdersByStatus" class="com.lzz.order.action.order.LzzOrderAction" method="getOrdersByStatus"></action>
+        
+		<action name="getAddresses" class="com.lzz.order.action.user.LzzUserAction" method="getAddresses"></action>
+		<action name="addOrUpdateAddress" class="com.lzz.order.action.user.LzzUserAction" method="addOrUpdateAddress"></action>
+		<action name="deleteAddress" class="com.lzz.order.action.user.LzzUserAction" method="deleteAddress"></action>
+		<action name="getAddressInfo" class="com.lzz.order.action.user.LzzUserAction" method="getAddressInfo"></action>
+		<action name="setAddressUsual" class="com.lzz.order.action.user.LzzUserAction" method="setAddressUsual"></action>
+		<action name="setUserInfo" class="com.lzz.order.action.user.LzzUserAction" method="setUserInfo"></action>
+		<action name="getMeInitInfo" class="com.lzz.order.action.user.LzzUserAction" method="getMeInitInfo"></action>
+		<action name="sendVerifyCode" class="com.lzz.order.action.user.LzzUserAction" method="sendVerifyCode"></action>
+		<action name="subBind" class="com.lzz.order.action.user.LzzUserAction" method="subBind"></action>
+		<action name="getGoodsViewed" class="com.lzz.order.action.user.LzzUserAction" method="getGoodsViewed"></action>
+		<action name="getGoodsInterested" class="com.lzz.order.action.user.LzzUserAction" method="getGoodsInterested"></action>
+		
+		<action name="getPrePaySign" class="com.lzz.order.action.pay.LzzPay" method="getPrePaySign"></action>
+		
+
+
+<action name="addOrUpdateLzzAfterSale" class="com.lzz.order.action.entering.LzzEntering" method="addOrUpdateLzzAfterSale"></action>
+<action name="removeSingleLzzAfterSale" class="com.lzz.order.action.entering.LzzEntering" method="removeSingleLzzAfterSale"></action>
+<action name="getAllLzzAfterSale" class="com.lzz.order.action.entering.LzzEntering" method="getAllLzzAfterSale"></action>
+<action name="getSingleLzzAfterSale" class="com.lzz.order.action.entering.LzzEntering" method="getSingleLzzAfterSale"></action>
+
+<action name="addOrUpdateLzzCart" class="com.lzz.order.action.entering.LzzEntering" method="addOrUpdateLzzCart"></action>
+<action name="removeSingleLzzCart" class="com.lzz.order.action.entering.LzzEntering" method="removeSingleLzzCart"></action>
+<action name="getAllLzzCart" class="com.lzz.order.action.entering.LzzEntering" method="getAllLzzCart"></action>
+<action name="getSingleLzzCart" class="com.lzz.order.action.entering.LzzEntering" method="getSingleLzzCart"></action>
+
+<action name="addOrUpdateLzzCoupon" class="com.lzz.order.action.entering.LzzEntering" method="addOrUpdateLzzCoupon"></action>
+<action name="removeSingleLzzCoupon" class="com.lzz.order.action.entering.LzzEntering" method="removeSingleLzzCoupon"></action>
+<action name="getAllLzzCoupon" class="com.lzz.order.action.entering.LzzEntering" method="getAllLzzCoupon"></action>
+<action name="getSingleLzzCoupon" class="com.lzz.order.action.entering.LzzEntering" method="getSingleLzzCoupon"></action>
+
+<action name="addOrUpdateLzzDictionary" class="com.lzz.order.action.entering.LzzEntering" method="addOrUpdateLzzDictionary"></action>
+<action name="removeSingleLzzDictionary" class="com.lzz.order.action.entering.LzzEntering" method="removeSingleLzzDictionary"></action>
+<action name="getAllLzzDictionary" class="com.lzz.order.action.entering.LzzEntering" method="getAllLzzDictionary"></action>
+<action name="getSingleLzzDictionary" class="com.lzz.order.action.entering.LzzEntering" method="getSingleLzzDictionary"></action>
+
+<action name="addOrUpdateLzzFileGroup" class="com.lzz.order.action.entering.LzzEntering" method="addOrUpdateLzzFileGroup"></action>
+<action name="removeSingleLzzFileGroup" class="com.lzz.order.action.entering.LzzEntering" method="removeSingleLzzFileGroup"></action>
+<action name="getAllLzzFileGroup" class="com.lzz.order.action.entering.LzzEntering" method="getAllLzzFileGroup"></action>
+<action name="getSingleLzzFileGroup" class="com.lzz.order.action.entering.LzzEntering" method="getSingleLzzFileGroup"></action>
+
+<action name="addOrUpdateLzzFileInfo" class="com.lzz.order.action.entering.LzzEntering" method="addOrUpdateLzzFileInfo"></action>
+<action name="removeSingleLzzFileInfo" class="com.lzz.order.action.entering.LzzEntering" method="removeSingleLzzFileInfo"></action>
+<action name="getAllLzzFileInfo" class="com.lzz.order.action.entering.LzzEntering" method="getAllLzzFileInfo"></action>
+<action name="getSingleLzzFileInfo" class="com.lzz.order.action.entering.LzzEntering" method="getSingleLzzFileInfo"></action>
+
+<action name="addOrUpdateLzzGood" class="com.lzz.order.action.entering.LzzEntering" method="addOrUpdateLzzGood"></action>
+<action name="removeSingleLzzGood" class="com.lzz.order.action.entering.LzzEntering" method="removeSingleLzzGood"></action>
+<action name="getAllLzzGood" class="com.lzz.order.action.entering.LzzEntering" method="getAllLzzGood"></action>
+<action name="getSingleLzzGood" class="com.lzz.order.action.entering.LzzEntering" method="getSingleLzzGood"></action>
+
+<action name="addOrUpdateLzzGoodCategory" class="com.lzz.order.action.entering.LzzEntering" method="addOrUpdateLzzGoodCategory"></action>
+<action name="removeSingleLzzGoodCategory" class="com.lzz.order.action.entering.LzzEntering" method="removeSingleLzzGoodCategory"></action>
+<action name="getAllLzzGoodCategory" class="com.lzz.order.action.entering.LzzEntering" method="getAllLzzGoodCategory"></action>
+<action name="getSingleLzzGoodCategory" class="com.lzz.order.action.entering.LzzEntering" method="getSingleLzzGoodCategory"></action>
+
+<action name="addOrUpdateLzzGoodEvaluate" class="com.lzz.order.action.entering.LzzEntering" method="addOrUpdateLzzGoodEvaluate"></action>
+<action name="removeSingleLzzGoodEvaluate" class="com.lzz.order.action.entering.LzzEntering" method="removeSingleLzzGoodEvaluate"></action>
+<action name="getAllLzzGoodEvaluate" class="com.lzz.order.action.entering.LzzEntering" method="getAllLzzGoodEvaluate"></action>
+<action name="getSingleLzzGoodEvaluate" class="com.lzz.order.action.entering.LzzEntering" method="getSingleLzzGoodEvaluate"></action>
+
+<action name="addOrUpdateLzzGoodFormat" class="com.lzz.order.action.entering.LzzEntering" method="addOrUpdateLzzGoodFormat"></action>
+<action name="removeSingleLzzGoodFormat" class="com.lzz.order.action.entering.LzzEntering" method="removeSingleLzzGoodFormat"></action>
+<action name="getAllLzzGoodFormat" class="com.lzz.order.action.entering.LzzEntering" method="getAllLzzGoodFormat"></action>
+<action name="getSingleLzzGoodFormat" class="com.lzz.order.action.entering.LzzEntering" method="getSingleLzzGoodFormat"></action>
+
+<action name="addOrUpdateLzzGoodTaste" class="com.lzz.order.action.entering.LzzEntering" method="addOrUpdateLzzGoodTaste"></action>
+<action name="removeSingleLzzGoodTaste" class="com.lzz.order.action.entering.LzzEntering" method="removeSingleLzzGoodTaste"></action>
+<action name="getAllLzzGoodTaste" class="com.lzz.order.action.entering.LzzEntering" method="getAllLzzGoodTaste"></action>
+<action name="getSingleLzzGoodTaste" class="com.lzz.order.action.entering.LzzEntering" method="getSingleLzzGoodTaste"></action>
+
+<action name="addOrUpdateLzzOrder" class="com.lzz.order.action.entering.LzzEntering" method="addOrUpdateLzzOrder"></action>
+<action name="removeSingleLzzOrder" class="com.lzz.order.action.entering.LzzEntering" method="removeSingleLzzOrder"></action>
+<action name="getAllLzzOrder" class="com.lzz.order.action.entering.LzzEntering" method="getAllLzzOrder"></action>
+<action name="getSingleLzzOrder" class="com.lzz.order.action.entering.LzzEntering" method="getSingleLzzOrder"></action>
+
+<action name="addOrUpdateLzzOrderInfo" class="com.lzz.order.action.entering.LzzEntering" method="addOrUpdateLzzOrderInfo"></action>
+<action name="removeSingleLzzOrderInfo" class="com.lzz.order.action.entering.LzzEntering" method="removeSingleLzzOrderInfo"></action>
+<action name="getAllLzzOrderInfo" class="com.lzz.order.action.entering.LzzEntering" method="getAllLzzOrderInfo"></action>
+<action name="getSingleLzzOrderInfo" class="com.lzz.order.action.entering.LzzEntering" method="getSingleLzzOrderInfo"></action>
+
+<action name="addOrUpdateLzzOrderSendMode" class="com.lzz.order.action.entering.LzzEntering" method="addOrUpdateLzzOrderSendMode"></action>
+<action name="removeSingleLzzOrderSendMode" class="com.lzz.order.action.entering.LzzEntering" method="removeSingleLzzOrderSendMode"></action>
+<action name="getAllLzzOrderSendMode" class="com.lzz.order.action.entering.LzzEntering" method="getAllLzzOrderSendMode"></action>
+<action name="getSingleLzzOrderSendMode" class="com.lzz.order.action.entering.LzzEntering" method="getSingleLzzOrderSendMode"></action>
+
+<action name="addOrUpdateLzzUser" class="com.lzz.order.action.entering.LzzEntering" method="addOrUpdateLzzUser"></action>
+<action name="removeSingleLzzUser" class="com.lzz.order.action.entering.LzzEntering" method="removeSingleLzzUser"></action>
+<action name="getAllLzzUser" class="com.lzz.order.action.entering.LzzEntering" method="getAllLzzUser"></action>
+<action name="getSingleLzzUser" class="com.lzz.order.action.entering.LzzEntering" method="getSingleLzzUser"></action>
+
+<action name="addOrUpdateLzzUserAddress" class="com.lzz.order.action.entering.LzzEntering" method="addOrUpdateLzzUserAddress"></action>
+<action name="removeSingleLzzUserAddress" class="com.lzz.order.action.entering.LzzEntering" method="removeSingleLzzUserAddress"></action>
+<action name="getAllLzzUserAddress" class="com.lzz.order.action.entering.LzzEntering" method="getAllLzzUserAddress"></action>
+<action name="getSingleLzzUserAddress" class="com.lzz.order.action.entering.LzzEntering" method="getSingleLzzUserAddress"></action>
+
+<action name="addOrUpdateLzzUserCoupon" class="com.lzz.order.action.entering.LzzEntering" method="addOrUpdateLzzUserCoupon"></action>
+<action name="removeSingleLzzUserCoupon" class="com.lzz.order.action.entering.LzzEntering" method="removeSingleLzzUserCoupon"></action>
+<action name="getAllLzzUserCoupon" class="com.lzz.order.action.entering.LzzEntering" method="getAllLzzUserCoupon"></action>
+<action name="getSingleLzzUserCoupon" class="com.lzz.order.action.entering.LzzEntering" method="getSingleLzzUserCoupon"></action>
+
+<action name="addOrUpdateLzzUserTaste" class="com.lzz.order.action.entering.LzzEntering" method="addOrUpdateLzzUserTaste"></action>
+<action name="removeSingleLzzUserTaste" class="com.lzz.order.action.entering.LzzEntering" method="removeSingleLzzUserTaste"></action>
+<action name="getAllLzzUserTaste" class="com.lzz.order.action.entering.LzzEntering" method="getAllLzzUserTaste"></action>
+<action name="getSingleLzzUserTaste" class="com.lzz.order.action.entering.LzzEntering" method="getSingleLzzUserTaste"></action>
+
+<action name="addOrUpdateLzzExpressCompany" class="com.lzz.order.action.entering.LzzEntering" method="addOrUpdateLzzExpressCompany"></action>
+<action name="removeSingleLzzExpressCompany" class="com.lzz.order.action.entering.LzzEntering" method="removeSingleLzzExpressCompany"></action>
+<action name="getAllLzzExpressCompany" class="com.lzz.order.action.entering.LzzEntering" method="getAllLzzExpressCompany"></action>
+<action name="getSingleLzzExpressCompany" class="com.lzz.order.action.entering.LzzEntering" method="getSingleLzzExpressCompany"></action>
+
+<action name="addOrUpdateLzzShopEvaluate" class="com.lzz.order.action.entering.LzzEntering" method="addOrUpdateLzzShopEvaluate"></action>
+<action name="removeSingleLzzShopEvaluate" class="com.lzz.order.action.entering.LzzEntering" method="removeSingleLzzShopEvaluate"></action>
+<action name="getAllLzzShopEvaluate" class="com.lzz.order.action.entering.LzzEntering" method="getAllLzzShopEvaluate"></action>
+<action name="getSingleLzzShopEvaluate" class="com.lzz.order.action.entering.LzzEntering" method="getSingleLzzShopEvaluate"></action>
+
+<action name="addOrUpdateLzzCategory" class="com.lzz.order.action.entering.LzzEntering" method="addOrUpdateLzzCategory"></action>
+<action name="removeSingleLzzCategory" class="com.lzz.order.action.entering.LzzEntering" method="removeSingleLzzCategory"></action>
+<action name="getAllLzzCategory" class="com.lzz.order.action.entering.LzzEntering" method="getAllLzzCategory"></action>
+<action name="getSingleLzzCategory" class="com.lzz.order.action.entering.LzzEntering" method="getSingleLzzCategory"></action>
+
+<action name="addOrUpdateLzzUserGoodInterested" class="com.lzz.order.action.entering.LzzEntering" method="addOrUpdateLzzUserGoodInterested"></action>
+<action name="removeSingleLzzUserGoodInterested" class="com.lzz.order.action.entering.LzzEntering" method="removeSingleLzzUserGoodInterested"></action>
+<action name="getAllLzzUserGoodInterested" class="com.lzz.order.action.entering.LzzEntering" method="getAllLzzUserGoodInterested"></action>
+<action name="getSingleLzzUserGoodInterested" class="com.lzz.order.action.entering.LzzEntering" method="getSingleLzzUserGoodInterested"></action>
+
+<action name="addOrUpdateLzzUserSession" class="com.lzz.order.action.entering.LzzEntering" method="addOrUpdateLzzUserSession"></action>
+<action name="removeSingleLzzUserSession" class="com.lzz.order.action.entering.LzzEntering" method="removeSingleLzzUserSession"></action>
+<action name="getAllLzzUserSession" class="com.lzz.order.action.entering.LzzEntering" method="getAllLzzUserSession"></action>
+<action name="getSingleLzzUserSession" class="com.lzz.order.action.entering.LzzEntering" method="getSingleLzzUserSession"></action>
+
+<action name="addOrUpdateLzzUserGoodViewed" class="com.lzz.order.action.entering.LzzEntering" method="addOrUpdateLzzUserGoodViewed"></action>
+<action name="removeSingleLzzUserGoodViewed" class="com.lzz.order.action.entering.LzzEntering" method="removeSingleLzzUserGoodViewed"></action>
+<action name="getAllLzzUserGoodViewed" class="com.lzz.order.action.entering.LzzEntering" method="getAllLzzUserGoodViewed"></action>
+<action name="getSingleLzzUserGoodViewed" class="com.lzz.order.action.entering.LzzEntering" method="getSingleLzzUserGoodViewed"></action>
+
+<action name="addOrUpdateLzzIndexDisplay" class="com.lzz.order.action.entering.LzzEntering" method="addOrUpdateLzzIndexDisplay"></action>
+<action name="removeSingleLzzIndexDisplay" class="com.lzz.order.action.entering.LzzEntering" method="removeSingleLzzIndexDisplay"></action>
+<action name="getAllLzzIndexDisplay" class="com.lzz.order.action.entering.LzzEntering" method="getAllLzzIndexDisplay"></action>
+<action name="getSingleLzzIndexDisplay" class="com.lzz.order.action.entering.LzzEntering" method="getSingleLzzIndexDisplay"></action>
+
+
+
+  
+	</package>		
+</struts>
+	

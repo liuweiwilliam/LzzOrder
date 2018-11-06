@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<param>
+  <pair name="project_name" content="order"/>
+  <pair name="service_name" content="LzzFileService"/>
+  <pair name="dao_imp_class" content="XtlDaoImp"/>
+  <pair name="service_pack" content="service"/>
+  <pair name="dao_name" content="LzzDao"/>
+  <pair name="cache_name" content="LzzFileCacheMgr"/>
+  <list name="service_list">
+    <record>
+      <pair name="class_name" content="LzzFileInfo"/>
+    </record>
+    <record>
+      <pair name="class_name" content="LzzFileGroup"/>
+    </record>
+  </list>
+</param>

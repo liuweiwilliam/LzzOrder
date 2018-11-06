@@ -1,0 +1,8 @@
+文件名,xml/LzzShopCacheMgr.xml,
+全局变量,project_name,order
+全局变量,cache_mgr_name,LzzShopCacheMgr
+全局变量,cache_mgr_pack,cachemgr
+表,pojo_list,pojo列表
+,class_name,
+,LzzShopEvaluate,
+,LzzIndexDisplay,

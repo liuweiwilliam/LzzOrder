@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<param>
+	<list name="list1">
+		<record>
+			<pair name="params" content="xml/LzzID.xml"/>
+			<pair name="template" content="templete/pojo.txt"/>
+		</record>
+			<record>
+			<pair name="params" content="xml/LzzID.xml"/>
+			<pair name="template" content="templete/hib_conf.txt"/>
+		</record>
+		<record>
+			<pair name="params" content="xml/LzzIDService.xml"/>
+			<pair name="template" content="templete/service.txt"/>
+		</record>
+		<record>
+			<pair name="params" content="xml/LzzIDCacheMgr.xml"/>
+			<pair name="template" content="templete/cachemgr.txt"/>
+		</record>
+		
+		<record>
+			<pair name="params" content="xml/LzzUser.xml"/>
+			<pair name="template" content="templete/pojo.txt"/>
+		</record>
+		<record>
+			<pair name="params" content="xml/LzzUser.xml"/>
+			<pair name="template" content="templete/hib_conf.txt"/>
+		</record>
+		<record>
+			<pair name="params" content="xml/LzzUserSession.xml"/>
+			<pair name="template" content="templete/pojo.txt"/>
+		</record>
+			<record>
+			<pair name="params" content="xml/LzzUserSession.xml"/>
+			<pair name="template" content="templete/hib_conf.txt"/>
+		</record>
+		<record>
+			<pair name="params" content="xml/LzzUserTaste.xml"/>
+			<pair name="template" content="templete/pojo.txt"/>
+		</record>
+			<record>
+			<pair name="params" content="xml/LzzUserTaste.xml"/>
+			<pair name="template" content="templete/hib_conf.txt"/>
+		</record>
+		<record>
+			<pair name="params" content="xml/LzzUserGoodInterested.xml"/>
+			<pair name="template" content="templete/pojo.txt"/>
+		</record>
+			<record>
+			<pair name="params" content="xml/LzzUserGoodInterested.xml"/>
+			<pair name="template" content="templete/hib_conf.txt"/>
+		</record>
+		<record>
+			<pair name="params" content="xml/LzzUserGoodViewed.xml"/>
+			<pair name="template" content="templete/pojo.txt"/>
+		</record>
+		<record>
+			<pair name="params" content="xml/LzzUserGoodViewed.xml"/>
+			<pair name="template" content="templete/hib_conf.txt"/>
+		</record>
+		<record>
+			<pair name="params" content="xml/LzzUserAddress.xml"/>
+			<pair name="template" content="templete/pojo.txt"/>
+		</record>
+			<record>
+			<pair name="params" content="xml/LzzUserAddress.xml"/>
+			<pair name="template" content="templete/hib_conf.txt"/>
+		</record>
+		<record>
+			<pair name="params" content="xml/LzzUserCoupon.xml"/>
+			<pair name="template" content="templete/pojo.txt"/>
+		</record>
+			<record>
+			<pair name="params" content="xml/LzzUserCoupon.xml"/>
+			<pair name="template" content="templete/hib_conf.txt"/>
+		</record>
+		<record>
+			<pair name="params" content="xml/LzzUserService.xml"/>
+			<pair name="template" content="templete/service.txt"/>
+		</record>
+		<record>
+			<pair name="params" content="xml/LzzUserCacheMgr.xml"/>
+			<pair name="template" content="templete/cachemgr.txt"/>
+		</record>
+		
+		<record>
+			<pair name="params" content="xml/LzzGood.xml"/>
+			<pair name="template" content="templete/pojo.txt"/>
+		</record>
+		<record>
+			<pair name="params" content="xml/LzzGood.xml"/>
+			<pair name="template" content="templete/hib_conf.txt"/>
+		</record>
+		<record>
+			<pair name="params" content="xml/LzzCategory.xml"/>
+			<pair name="template" content="templete/pojo.txt"/>
+		</record>
+		<record>
+			<pair name="params" content="xml/LzzCategory.xml"/>
+			<pair name="template" content="templete/hib_conf.txt"/>
+		</record>
+		<record>
+			<pair name="params" content="xml/LzzGoodTaste.xml"/>
+			<pair name="template" content="templete/pojo.txt"/>
+		</record>
+		<record>
+			<pair name="params" content="xml/LzzGoodTaste.xml"/>
+			<pair name="template" content="templete/hib_conf.txt"/>
+		</record>
+		<record>
+			<pair name="params" content="xml/LzzGoodCategory.xml"/>
+			<pair name="template" content="templete/pojo.txt"/>
+		</record>
+		<record>
+			<pair name="params" content="xml/LzzGoodCategory.xml"/>
+			<pair name="template" content="templete/hib_conf.txt"/>
+		</record>
+		<record>
+			<pair name="params" content="xml/LzzGoodFormat.xml"/>
+			<pair name="template" content="templete/pojo.txt"/>
+		</record>
+		<record>
+			<pair name="params" content="xml/LzzGoodFormat.xml"/>
+			<pair name="template" content="templete/hib_conf.txt"/>
+		</record>
+		<record>
+			<pair name="params" content="xml/LzzGoodEvaluate.xml"/>
+			<pair name="template" content="templete/pojo.txt"/>
+		</record>
+		<record>
+			<pair name="params" content="xml/LzzGoodEvaluate.xml"/>
+			<pair name="template" content="templete/hib_conf.txt"/>
+		</record>
+		<record>
+			<pair name="params" content="xml/LzzGoodService.xml"/>
+			<pair name="template" content="templete/service.txt"/>
+		</record>
+		<record>
+			<pair name="params" content="xml/LzzGoodCacheMgr.xml"/>
+			<pair name="template" content="templete/cachemgr.txt"/>
+		</record>
+		
+		<record>
+			<pair name="params" content="xml/LzzOrder.xml"/>
+			<pair name="template" content="templete/pojo.txt"/>
+		</record>
+		<record>
+			<pair name="params" content="xml/LzzOrder.xml"/>
+			<pair name="template" content="templete/hib_conf.txt"/>
+		</record>
+		<record>
+			<pair name="params" content="xml/LzzOrderInfo.xml"/>
+			<pair name="template" content="templete/pojo.txt"/>
+		</record>
+		<record>
+			<pair name="params" content="xml/LzzOrderInfo.xml"/>
+			<pair name="template" content="templete/hib_conf.txt"/>
+		</record>
+		<record>
+			<pair name="params" content="xml/LzzOrderSendMode.xml"/>
+			<pair name="template" content="templete/pojo.txt"/>
+		</record>
+		<record>
+			<pair name="params" content="xml/LzzOrderSendMode.xml"/>
+			<pair name="template" content="templete/hib_conf.txt"/>
+		</record>
+		<record>
+			<pair name="params" content="xml/LzzOrderService.xml"/>
+			<pair name="template" content="templete/service.txt"/>
+		</record>
+		<record>
+			<pair name="params" content="xml/LzzOrderCacheMgr.xml"/>
+			<pair name="template" content="templete/cachemgr.txt"/>
+		</record>
+		
+		<record>
+			<pair name="params" content="xml/LzzCart.xml"/>
+			<pair name="template" content="templete/pojo.txt"/>
+		</record>
+		<record>
+			<pair name="params" content="xml/LzzCart.xml"/>
+			<pair name="template" content="templete/hib_conf.txt"/>
+		</record>
+		<record>
+			<pair name="params" content="xml/LzzCartService.xml"/>
+			<pair name="template" content="templete/service.txt"/>
+		</record>
+		<record>
+			<pair name="params" content="xml/LzzCartCacheMgr.xml"/>
+			<pair name="template" content="templete/cachemgr.txt"/>
+		</record>
+		
+		<record>
+			<pair name="params" content="xml/LzzAfterSale.xml"/>
+			<pair name="template" content="templete/pojo.txt"/>
+		</record>
+		<record>
+			<pair name="params" content="xml/LzzAfterSale.xml"/>
+			<pair name="template" content="templete/hib_conf.txt"/>
+		</record>
+		<record>
+			<pair name="params" content="xml/LzzAfterSaleService.xml"/>
+			<pair name="template" content="templete/service.txt"/>
+		</record>
+		<record>
+			<pair name="params" content="xml/LzzAfterSaleCacheMgr.xml"/>
+			<pair name="template" content="templete/cachemgr.txt"/>
+		</record>
+		
+		<record>
+			<pair name="params" content="xml/LzzCoupon.xml"/>
+			<pair name="template" content="templete/pojo.txt"/>
+		</record>
+		<record>
+			<pair name="params" content="xml/LzzCoupon.xml"/>
+			<pair name="template" content="templete/hib_conf.txt"/>
+		</record>
+		<record>
+			<pair name="params" content="xml/LzzCouponService.xml"/>
+			<pair name="template" content="templete/service.txt"/>
+		</record>
+		<record>
+			<pair name="params" content="xml/LzzCouponCacheMgr.xml"/>
+			<pair name="template" content="templete/cachemgr.txt"/>
+		</record>
+		
+		<record>
+			<pair name="params" content="xml/LzzDictionary.xml"/>
+			<pair name="template" content="templete/pojo.txt"/>
+		</record>
+		<record>
+			<pair name="params" content="xml/LzzDictionary.xml"/>
+			<pair name="template" content="templete/hib_conf.txt"/>
+		</record>
+		<record>
+			<pair name="params" content="xml/LzzDictionaryService.xml"/>
+			<pair name="template" content="templete/service.txt"/>
+		</record>
+		<record>
+			<pair name="params" content="xml/LzzDictionaryCacheMgr.xml"/>
+			<pair name="template" content="templete/cachemgr.txt"/>
+		</record>
+		
+		<record>
+			<pair name="params" content="xml/LzzFileInfo.xml"/>
+			<pair name="template" content="templete/pojo.txt"/>
+		</record>
+		<record>
+			<pair name="params" content="xml/LzzFileInfo.xml"/>
+			<pair name="template" content="templete/hib_conf.txt"/>
+		</record>
+		<record>
+			<pair name="params" content="xml/LzzFileGroup.xml"/>
+			<pair name="template" content="templete/pojo.txt"/>
+		</record>
+		<record>
+			<pair name="params" content="xml/LzzFileGroup.xml"/>
+			<pair name="template" content="templete/hib_conf.txt"/>
+		</record>
+		<record>
+			<pair name="params" content="xml/LzzFileService.xml"/>
+			<pair name="template" content="templete/service.txt"/>
+		</record>
+		<record>
+			<pair name="params" content="xml/LzzFileCacheMgr.xml"/>
+			<pair name="template" content="templete/cachemgr.txt"/>
+		</record>
+		
+		<record>
+			<pair name="params" content="xml/LzzExpressCompany.xml"/>
+			<pair name="template" content="templete/pojo.txt"/>
+		</record>
+		<record>
+			<pair name="params" content="xml/LzzExpressCompany.xml"/>
+			<pair name="template" content="templete/hib_conf.txt"/>
+		</record>
+		<record>
+			<pair name="params" content="xml/LzzExpressCompanyService.xml"/>
+			<pair name="template" content="templete/service.txt"/>
+		</record>
+		<record>
+			<pair name="params" content="xml/LzzExpressCompanyCacheMgr.xml"/>
+			<pair name="template" content="templete/cachemgr.txt"/>
+		</record>
+		
+		<record>
+			<pair name="params" content="xml/LzzShopEvaluate.xml"/>
+			<pair name="template" content="templete/pojo.txt"/>
+		</record>
+		<record>
+			<pair name="params" content="xml/LzzShopEvaluate.xml"/>
+			<pair name="template" content="templete/hib_conf.txt"/>
+		</record>
+		<record>
+			<pair name="params" content="xml/LzzIndexDisplay.xml"/>
+			<pair name="template" content="templete/pojo.txt"/>
+		</record>
+		<record>
+			<pair name="params" content="xml/LzzIndexDisplay.xml"/>
+			<pair name="template" content="templete/hib_conf.txt"/>
+		</record>
+		<record>
+			<pair name="params" content="xml/LzzShopService.xml"/>
+			<pair name="template" content="templete/service.txt"/>
+		</record>
+		<record>
+			<pair name="params" content="xml/LzzShopCacheMgr.xml"/>
+			<pair name="template" content="templete/cachemgr.txt"/>
+		</record>
+		
+		<record>
+			<pair name="params" content="xml/LzzEntering.xml"/>
+			<pair name="template" content="templete/entering.txt"/>
+		</record>
+	</list>
+</param>
+

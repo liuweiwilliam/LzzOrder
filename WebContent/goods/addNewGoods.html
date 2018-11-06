@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="keywords" content=""/>
+    <title>商品上架</title>
+		
+	<link href="../css/bootstrap.min.css" rel="stylesheet">
+	<link href="../css/basic.css" rel="stylesheet">
+		
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/basic.js"></script>
+	<style type="text/css">
+		.flow-div:after{
+			display:block;
+			clear:both;
+			content:"";
+			visibility:hidden;
+			height:0;
+		}
+		
+		.left-part{
+			float: left;
+		}
+		
+		.right-part{
+			float: right;
+		}
+		
+		div{
+			width:100%;
+		}
+	</style>
+    <script>
+    </script>
+</head>
+<body onLoad="">
+	<div class="flex-col" style="width:95%;margin:0 auto;">
+		<div class="flex-row margin-top-s">
+			<span style="width:10rem;">商品名称:</span>
+			<input class="form-control" id="name">
+		</div>
+		<div class="flex-row margin-top-s">
+			<span style="width:10rem;">商品二维码:</span>
+			<input class="form-control" id="code">
+		</div>
+		<div class="flex-col margin-top-s from-start">
+			<div class="flex-row from-start">
+				<span style="width:10rem;">商品展示图片组:</span>
+				<a onclick="addDisplayImg()">添加图片</a>
+				<input id="displayImgs" style="display:none">
+			</div>
+			<div class="flex-row from-start align-start margin-top-s flex-wrap" id="displayImgsDiv">
+			</div>
+		</div>
+		<input name="file" style="display:none" type="file" size="20" id="file">
+		<div class="flex-col margin-top-s from-start">
+			<div class="flex-row from-start">
+				<span style="width:10rem;">商品滚动图片组:</span>
+				<a onclick="addScrollImg()">添加图片</a>
+				<input id="scrollImgs" style="display:none">
+			</div>
+			<div class="flex-row from-start align-start margin-top-s flex-wrap" id="scrollImgsDiv">
+			</div>
+		</div>
+		<div class="flex-col margin-top-s from-start">
+			<div class="flex-row from-start">
+				<span style="width:10rem;">示例图片组:</span>
+				<a onclick="addTypicalImg()">添加图片</a>
+				<input id="typicalImg" style="display:none">
+			</div>
+			<div class="flex-row from-start align-start margin-top-s flex-wrap" id="typicalImgDiv">
+			</div>
+		</div>
+		<div class="flex-row margin-top-s">
+			<span style="width:10rem;">商品规格及价格:</span>
+		</div>
+		<div class="flex-col margin-top-s" style="width:90%" id="formatPrice">
+			<div class="flex-row singleFormat margin-top-s">
+				<div class="flex-row" style="width:45%">
+					<span style="width:10%;">规格:</span><input class="form-control format" style="width:90%">
+				</div>
+				<div class="flex-row margin-left-s" style="width:45%">
+					<span style="width:10%;">价格:</span><input class="form-control price" style="width:90%">
+				</div>
+				<img alt="" src="../images/base/cir-del.png" onclick="delFormatPrice(this)" style="width:5%;" class="margin-left-s">
+			</div>
+		</div>
+		<div class="flex-col margin-top-s" style="width:90%">
+			<img alt="" src="../images/base/cir-add.png" style="width:5%;" onclick="addFormatPrice()">
+		</div>
+		
+		<div class="flex-row margin-top-s">
+			<span style="width:10rem;">商品口味:</span>
+		</div>
+		<div class="flex-col margin-top-s" style="width:90%" id="taste">
+			<div class="flex-row singleTaste margin-top-s">
+				<div class="flex-row" style="width:90%;">
+					<span style="width:10%;">口味:</span><input class="form-control taste" style="width:90%;">
+				</div>
+				<img alt="" src="../images/base/cir-del.png" style="width:5%;" class="margin-left-s" onclick="delTaste(this)">
+			</div>
+		</div>
+		<div class="flex-col margin-top-s" style="width:90%">
+			<img alt="" src="../images/base/cir-add.png" style="width:5%;" onclick="addTaste()">
+		</div>
+		
+		<div class="flex-row margin-top-s">
+			<span style="width:10rem;">销量:</span>
+			<input class="form-control" id="saleCount">
+		</div>
+		<div class="flex-row margin-top-s">
+			<span style="width:10rem;">是否热销:</span>
+			<input class="form-control" id="isHot">
+		</div>
+		<div class="flex-row margin-top-s">
+			<span style="width:10rem;">是否新品:</span>
+			<input class="form-control" id="isNew">
+		</div>
+		<div class="flex-row margin-top-s">
+			<span style="width:10rem;">商品分类:</span>
+			<div id="cateList" class="flex-row">
+			</div>
+		</div>
+		<div class="flex-row margin-top-s">
+			<div style="width:50%" class="flex-row from-center">
+				<button class="btn btn-danger" onclick="clear()" style="width:50%">清空</button>
+			</div>
+			<div style="width:50%" class="flex-row from-center">
+				<button class="btn" style="width:50%;background-color:#ff8c00;" onclick="submit()"><span style="color:white">提交</span></button>
+			</div>
+		</div>
+	</div>
+</body>
+
+<script type="text/javascript" src="../js/bootbox.js"></script>
+<script src="../js/ajaxfileupload.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$.ajax({
+	        type: "GET",
+	        url: "getLzzCategories.action",
+	        dataType: "json",
+	        beforeSend: function() {
+	        },
+	        success: function(data) {
+	        	$("#cateList").empty();
+	        	var html = "";
+	        	for(var i=0; i<data.catList.length; i++){
+	        		var obj = data.catList[i];
+	        		html += "<div class=\"margin-left-ss\"><input class=\"margin-left-s\" type=\"checkbox\" name=\"category\" value=\""+obj.id+"\"><label>"+obj.name+"</label></div>"
+	        	}
+	        	$("#cateList").append(html);
+	        },
+	        error: function(XHR) {
+	        }
+	    });
+	});
+	
+	function addDisplayImg(){
+		fileUpload($("#displayImgs"), '1');
+	}
+	
+	function addScrollImg(){
+		fileUpload($("#scrollImgs"), '1');
+	}
+	
+	function addTypicalImg(){
+		fileUpload($("#typicalImg"), '1');
+	}
+	
+	/*-- 附件上传 --*/
+	function fileUpload(a, type){
+		$("#file").on("change", function(){
+			ajaxFileUpload(a, type);
+		});
+		return $("#file").click();
+	}
+
+	/*-- 上传函数 --*/
+	function ajaxFileUpload(a, type) {
+    	$.ajaxFileUpload({  
+            url:"upload.action?type=" + type, //type表示文件类型 
+            secureuri:true, 
+            fileElementId:"file",//上传file控件的id，
+            dataType:'json', 
+            beforeSend: function() {
+            },
+            success:function(data,status){
+            	console.log(data);
+            	var ids = $(a).val();
+            	if(ids==""){
+            		ids = data.id;
+            	}else{
+            		ids += "," + data.id;
+            	}
+            	$(a).val(ids);
+            	
+            	var img = '<img alt="" src="' + data.path + '" class="margin-left-s" style="width:20%;">';
+				img += '<img alt="" src="../images/base/delImg.png" onclick="deleteImg(this, \''+ $(a).attr("id") +'\','+ data.id +')" class="margin-left-s" style="width:4%;position:relative;left:-2%;top:-2%;">';
+            	$(a).parent().next().append(img);
+            	
+            	showToast("上传成功", 1000);
+            },  
+            error:function(){  
+            	showToast("上传失败", 1000);
+            }  
+        }); 
+        return 0;
+    }
+	
+	function deleteImg(thes, a, id){
+		var val = $("#"+a).val();
+		console.log(val);
+		val = val.replace(id+",", "");
+		val = val.replace(id, "");
+		val = val.replace(",,",",");
+		$("#"+a).val(val);
+		console.log($("#"+a).val());
+		
+		$(thes).prev().remove();
+		$(thes).remove();
+	}
+	
+	function addFormatPrice(){
+		var html =	'<div class="flex-row singleFormat margin-top-s">'
+					+	'<div class="flex-row" style="width:45%">'
+					+		'<span style="width:10%;">规格:</span><input class="form-control format" style="width:90%" value="包">'
+					+ 	'</div>'
+					+	'<div class="flex-row margin-left-s" style="width:45%">'
+					+		'<span style="width:10%;">价格:</span><input class="form-control price" style="width:90%" value="0.0">'
+					+	'</div>'
+					+	'<img alt="" src="../images/base/cir-del.png" onclick="delFormatPrice(this)" style="width:5%;" class="margin-left-s">'
+					+'</div>';
+		$("#formatPrice").append(html);
+	}
+	
+	function delFormatPrice(a){
+		$(a).parent().remove();
+	}
+	
+	function addTaste(){
+		var html =	'<div class="flex-row singleTaste margin-top-s">'
+				+		'<div class="flex-row" style="width:90%;">'
+				+			'<span style="width:10%;">口味:</span><input class="form-control taste" style="width:90%;" value="原味">'
+				+		'</div>'
+				+		'<img alt="" src="../images/base/cir-del.png" style="width:5%;" class="margin-left-s" onclick="delTaste(this)">'
+				+	'</div>';
+		$("#taste").append(html);
+	}
+	
+	function delTaste(a){
+		$(a).parent().remove();
+	}
+
+	function submit(){
+		var subData = {};
+		if($("#name").val()==""){
+			$("#name").focus();
+			return;
+		}
+		subData.name = $("#name").val()
+		
+		if($("#code").val()==""){
+			$("#code").focus();
+			return;
+		}
+		subData.code = $("#code").val()
+		
+		var flag = true;
+		var formatPrice = [];
+		//规格价格
+		$("#formatPrice").find(".singleFormat").each(function(){
+			var single = {};
+			if($(this).find(".format").val()==""){
+				$(this).find(".format").focus();
+				flag = false;
+				return false;
+			}
+			if($(this).find(".price").val()==""){
+				$(this).find(".price").focus();
+				flag = false;
+				return false;
+			}
+			single.format = $(this).find(".format").val();
+			single.price = $(this).find(".price").val();
+			
+			formatPrice.push(single);
+		});
+		if(!flag){
+			return;
+		}
+		subData.formatPrice = formatPrice;
+		
+		var taste = [];
+		//口味
+		$("#taste").find(".singleTaste").each(function(){
+			if($(this).find(".taste").val()==""){
+				$(this).find(".taste").focus();
+				flag = false;
+				return false;
+			}
+			taste.push($(this).find(".taste").val());
+		});
+		if(!flag){
+			return;
+		}
+		subData.taste = taste;
+		
+		//图片组
+		if($("#displayImgs").val()==""){
+			return;
+		}
+		subData.displayImgs = $("#displayImgs").val().split(",")
+		
+		if($("#scrollImgs").val()==""){
+			return;
+		}
+		subData.scrollImgs = $("#scrollImgs").val().split(",")
+		
+		if($("#typicalImg").val()==""){
+			return;
+		}
+		subData.typicalImg = $("#typicalImg").val().split(",")
+		
+		if($("#saleCount").val()==""){
+			$("#saleCount").focus();
+			return;
+		}
+		subData.saleCount = $("#saleCount").val()
+		
+		if($("#isHot").val()==""){
+			$("#isHot").focus();
+			return;
+		}
+		subData.isHot = $("#isHot").val()
+		
+		if($("#isNew").val()==""){
+			$("#isNew").focus();
+			return;
+		}
+		subData.isNew = $("#isNew").val()
+		
+		var cats = [];
+		$('input[name="category"]:checked').each(function(){
+            var val=$(this).val();
+            cats.push(val)
+        });
+		if(cats==[]){
+			return;
+		}
+		subData.cats = cats;
+		console.log(encodeURI(JSON.stringify(subData)));
+		$.ajax({
+	        type: "GET",
+	        url: "createNewGood.action?subData=" + encodeURI(JSON.stringify(subData)),
+	        dataType: "json",
+	        beforeSend: function() {
+	        },
+	        success: function(data) {
+	        	showToast("创建成功", 1500);
+	        },
+	        error: function(XHR) {
+	        }
+	    });
+		
+	}
+</script>
+</html> 
+ 

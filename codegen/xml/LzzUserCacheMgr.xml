@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<param>
+  <pair name="project_name" content="order"/>
+  <pair name="cache_mgr_name" content="LzzUserCacheMgr"/>
+  <pair name="cache_mgr_pack" content="cachemgr"/>
+  <list name="pojo_list">
+    <record>
+      <pair name="class_name" content="LzzUser"/>
+    </record>
+    <record>
+      <pair name="class_name" content="LzzUserTaste"/>
+    </record>
+    <record>
+      <pair name="class_name" content="LzzUserAddress"/>
+    </record>
+    <record>
+      <pair name="class_name" content="LzzUserCoupon"/>
+    </record>
+    <record>
+      <pair name="class_name" content="LzzUserGoodInterested"/>
+    </record>
+    <record>
+      <pair name="class_name" content="LzzUserGoodViewed"/>
+    </record>
+    <record>
+      <pair name="class_name" content="LzzUserSession"/>
+    </record>
+  </list>
+</param>

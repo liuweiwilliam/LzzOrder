@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<param>
+  <pair name="project_name" content="order"/>
+  <pair name="class_name" content="LzzOrder"/>
+  <pair name="object_name" content="obj"/>
+  <pair name="table_name" content="lzzorder"/>
+  <pair name="global_variable" content="[]"/>
+  <pair name="global_variablej" content="[j]"/>
+  <pair name="table_showname" content="订单表"/>
+  <list name="field_list">
+    <record>
+      <pair name="fieldname" content="id"/>
+      <pair name="fielduname" content="Id"/>
+      <pair name="fieldshowname" content="ID"/>
+      <pair name="dblen" content="255"/>
+      <pair name="datatype" content="String"/>
+      <pair name="hbmtype" content="string"/>
+      <pair name="fieldmeaning" content="id"/>
+    </record>
+    <record>
+      <pair name="fieldname" content="userId"/>
+      <pair name="fielduname" content="UserId"/>
+      <pair name="fieldshowname" content="USERID"/>
+      <pair name="dblen" content="255"/>
+      <pair name="datatype" content="String"/>
+      <pair name="hbmtype" content="string"/>
+      <pair name="fieldmeaning" content="用户ID"/>
+    </record>
+    <record>
+      <pair name="fieldname" content="orderNum"/>
+      <pair name="fielduname" content="OrderNum"/>
+      <pair name="fieldshowname" content="ORDERNUM"/>
+      <pair name="dblen" content="255"/>
+      <pair name="datatype" content="String"/>
+      <pair name="hbmtype" content="string"/>
+      <pair name="fieldmeaning" content="订单号"/>
+    </record>
+    <record>
+      <pair name="fieldname" content="payTime"/>
+      <pair name="fielduname" content="PayTime"/>
+      <pair name="fieldshowname" content="PAYTIME"/>
+      <pair name="dblen" content="20"/>
+      <pair name="datatype" content="String"/>
+      <pair name="hbmtype" content="string"/>
+      <pair name="fieldmeaning" content="付款时间"/>
+    </record>
+    <record>
+      <pair name="fieldname" content="address"/>
+      <pair name="fielduname" content="Address"/>
+      <pair name="fieldshowname" content="ADDRESS"/>
+      <pair name="dblen" content="1000"/>
+      <pair name="datatype" content="String"/>
+      <pair name="hbmtype" content="text"/>
+      <pair name="fieldmeaning" content="地址信息"/>
+    </record>
+    <record>
+      <pair name="fieldname" content="expressCompany"/>
+      <pair name="fielduname" content="ExpressCompany"/>
+      <pair name="fieldshowname" content="EXPRESSCOMPANY"/>
+      <pair name="dblen" content="255"/>
+      <pair name="datatype" content="String"/>
+      <pair name="hbmtype" content="string"/>
+      <pair name="fieldmeaning" content="快递公司ID"/>
+    </record>
+    <record>
+      <pair name="fieldname" content="expressNum"/>
+      <pair name="fielduname" content="ExpressNum"/>
+      <pair name="fieldshowname" content="EXPRESSNUM"/>
+      <pair name="dblen" content="255"/>
+      <pair name="datatype" content="String"/>
+      <pair name="hbmtype" content="string"/>
+      <pair name="fieldmeaning" content="运单号"/>
+    </record>
+    <record>
+      <pair name="fieldname" content="expressFee"/>
+      <pair name="fielduname" content="ExpressFee"/>
+      <pair name="fieldshowname" content="EXPRESSFEE"/>
+      <pair name="dblen" content="255"/>
+      <pair name="datatype" content="String"/>
+      <pair name="hbmtype" content="string"/>
+      <pair name="fieldmeaning" content="运费"/>
+    </record>
+    <record>
+      <pair name="fieldname" content="status"/>
+      <pair name="fielduname" content="Status"/>
+      <pair name="fieldshowname" content="STATUS"/>
+      <pair name="dblen" content="255"/>
+      <pair name="datatype" content="String"/>
+      <pair name="hbmtype" content="string"/>
+      <pair name="fieldmeaning" content="订单状态"/>
+    </record>
+    <record>
+      <pair name="fieldname" content="evaluateTime"/>
+      <pair name="fielduname" content="EvaluateTime"/>
+      <pair name="fieldshowname" content="EVALUATETIME"/>
+      <pair name="dblen" content="20"/>
+      <pair name="datatype" content="String"/>
+      <pair name="hbmtype" content="string"/>
+      <pair name="fieldmeaning" content="评价时间"/>
+    </record>
+    <record>
+      <pair name="fieldname" content="finishTime"/>
+      <pair name="fielduname" content="FinishTime"/>
+      <pair name="fieldshowname" content="FINISHTIME"/>
+      <pair name="dblen" content="20"/>
+      <pair name="datatype" content="String"/>
+      <pair name="hbmtype" content="string"/>
+      <pair name="fieldmeaning" content="订单完成时间"/>
+    </record>
+    <record>
+      <pair name="fieldname" content="couponFlag"/>
+      <pair name="fielduname" content="CouponFlag"/>
+      <pair name="fieldshowname" content="COUPONFLAG"/>
+      <pair name="dblen" content="1"/>
+      <pair name="datatype" content="String"/>
+      <pair name="hbmtype" content="string"/>
+      <pair name="fieldmeaning" content="是否使用优惠卷"/>
+    </record>
+    <record>
+      <pair name="fieldname" content="couponId"/>
+      <pair name="fielduname" content="CouponId"/>
+      <pair name="fieldshowname" content="COUPONID"/>
+      <pair name="dblen" content="255"/>
+      <pair name="datatype" content="String"/>
+      <pair name="hbmtype" content="string"/>
+      <pair name="fieldmeaning" content="优惠卷ID"/>
+    </record>
+    <record>
+      <pair name="fieldname" content="couponPrice"/>
+      <pair name="fielduname" content="CouponPrice"/>
+      <pair name="fieldshowname" content="COUPONPRICE"/>
+      <pair name="dblen" content="255"/>
+      <pair name="datatype" content="String"/>
+      <pair name="hbmtype" content="string"/>
+      <pair name="fieldmeaning" content="优惠卷金额"/>
+    </record>
+    <record>
+      <pair name="fieldname" content="fromWhere"/>
+      <pair name="fielduname" content="FromWhere"/>
+      <pair name="fieldshowname" content="FROMWHERE"/>
+      <pair name="dblen" content="255"/>
+      <pair name="datatype" content="String"/>
+      <pair name="hbmtype" content="string"/>
+      <pair name="fieldmeaning" content="说明是来自购物车还是直接从商品详情提交"/>
+    </record>
+    <record>
+      <pair name="fieldname" content="comment"/>
+      <pair name="fielduname" content="Comment"/>
+      <pair name="fieldshowname" content="COMMENT"/>
+      <pair name="dblen" content="500"/>
+      <pair name="datatype" content="String"/>
+      <pair name="hbmtype" content="text"/>
+      <pair name="fieldmeaning" content="订单备注"/>
+    </record>
+    <record>
+      <pair name="fieldname" content="createTime"/>
+      <pair name="fielduname" content="CreateTime"/>
+      <pair name="fieldshowname" content="CREATETIME"/>
+      <pair name="dblen" content="20"/>
+      <pair name="datatype" content="String"/>
+      <pair name="hbmtype" content="string"/>
+      <pair name="fieldmeaning" content="创建时间"/>
+    </record>
+    <record>
+      <pair name="fieldname" content="modifyTime"/>
+      <pair name="fielduname" content="ModifyTime"/>
+      <pair name="fieldshowname" content="MODIFYTIME"/>
+      <pair name="dblen" content="20"/>
+      <pair name="datatype" content="String"/>
+      <pair name="hbmtype" content="string"/>
+      <pair name="fieldmeaning" content="修改时间"/>
+    </record>
+    <record>
+      <pair name="fieldname" content="def1"/>
+      <pair name="fielduname" content="Def1"/>
+      <pair name="fieldshowname" content="DEF1"/>
+      <pair name="dblen" content="500"/>
+      <pair name="datatype" content="String"/>
+      <pair name="hbmtype" content="text"/>
+      <pair name="fieldmeaning" content="备用字段1-10"/>
+    </record>
+    <record>
+      <pair name="fieldname" content="def2"/>
+      <pair name="fielduname" content="Def2"/>
+      <pair name="fieldshowname" content="DEF2"/>
+      <pair name="dblen" content="500"/>
+      <pair name="datatype" content="String"/>
+      <pair name="hbmtype" content="text"/>
+      <pair name="fieldmeaning" content=" "/>
+    </record>
+    <record>
+      <pair name="fieldname" content="def3"/>
+      <pair name="fielduname" content="Def3"/>
+      <pair name="fieldshowname" content="DEF3"/>
+      <pair name="dblen" content="500"/>
+      <pair name="datatype" content="String"/>
+      <pair name="hbmtype" content="text"/>
+      <pair name="fieldmeaning" content=" "/>
+    </record>
+    <record>
+      <pair name="fieldname" content="def4"/>
+      <pair name="fielduname" content="Def4"/>
+      <pair name="fieldshowname" content="DEF4"/>
+      <pair name="dblen" content="500"/>
+      <pair name="datatype" content="String"/>
+      <pair name="hbmtype" content="text"/>
+      <pair name="fieldmeaning" content=" "/>
+    </record>
+    <record>
+      <pair name="fieldname" content="def5"/>
+      <pair name="fielduname" content="Def5"/>
+      <pair name="fieldshowname" content="DEF5"/>
+      <pair name="dblen" content="500"/>
+      <pair name="datatype" content="String"/>
+      <pair name="hbmtype" content="text"/>
+      <pair name="fieldmeaning" content=" "/>
+    </record>
+    <record>
+      <pair name="fieldname" content="def6"/>
+      <pair name="fielduname" content="Def6"/>
+      <pair name="fieldshowname" content="DEF6"/>
+      <pair name="dblen" content="500"/>
+      <pair name="datatype" content="String"/>
+      <pair name="hbmtype" content="text"/>
+      <pair name="fieldmeaning" content=" "/>
+    </record>
+    <record>
+      <pair name="fieldname" content="def7"/>
+      <pair name="fielduname" content="Def7"/>
+      <pair name="fieldshowname" content="DEF7"/>
+      <pair name="dblen" content="500"/>
+      <pair name="datatype" content="String"/>
+      <pair name="hbmtype" content="text"/>
+      <pair name="fieldmeaning" content=" "/>
+    </record>
+    <record>
+      <pair name="fieldname" content="def8"/>
+      <pair name="fielduname" content="Def8"/>
+      <pair name="fieldshowname" content="DEF8"/>
+      <pair name="dblen" content="500"/>
+      <pair name="datatype" content="String"/>
+      <pair name="hbmtype" content="text"/>
+      <pair name="fieldmeaning" content=" "/>
+    </record>
+    <record>
+      <pair name="fieldname" content="def9"/>
+      <pair name="fielduname" content="Def9"/>
+      <pair name="fieldshowname" content="DEF9"/>
+      <pair name="dblen" content="500"/>
+      <pair name="datatype" content="String"/>
+      <pair name="hbmtype" content="text"/>
+      <pair name="fieldmeaning" content=" "/>
+    </record>
+    <record>
+      <pair name="fieldname" content="def10"/>
+      <pair name="fielduname" content="Def10"/>
+      <pair name="fieldshowname" content="DEF10"/>
+      <pair name="dblen" content="500"/>
+      <pair name="datatype" content="String"/>
+      <pair name="hbmtype" content="text"/>
+      <pair name="fieldmeaning" content=" "/>
+    </record>
+    <record>
+      <pair name="fieldname" content="dr"/>
+      <pair name="fielduname" content="Dr"/>
+      <pair name="fieldshowname" content="DR"/>
+      <pair name="dblen" content="1"/>
+      <pair name="datatype" content="String"/>
+      <pair name="hbmtype" content="string"/>
+      <pair name="fieldmeaning" content="删除标志"/>
+    </record>
+  </list>
+</param>
